@@ -5,32 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soutenir BibliBooks</title>
     <style>
+        :root {
+            --primary-color: #6200ee;
+            --secondary-color: #03dac6;
+            --text-color: #333333;
+            --bg-color: #f8f9fa;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 40px 20px;
-            background-color: #f8f9fa;
-            color: #333;
-            text-align: center;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             line-height: 1.6;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .content-section {
+            max-width: 650px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
         h1 {
-            color: #6200ee;
+            font-size: 2.2rem;
+            color: #111;
+            margin-top: 0;
             margin-bottom: 20px;
         }
+
         p {
-            color: #555;
             font-size: 1.1rem;
-            margin-bottom: 30px;
+            color: #555;
+            margin-bottom: 35px;
         }
+
+        /* Bouton externe pour le don */
         .btn-external-donation {
             display: inline-block;
             background-color: #ffca28;
@@ -42,36 +89,112 @@
             font-size: 1.1rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.2s, background-color 0.2s;
+            margin-bottom: 20px;
         }
+
         .btn-external-donation:hover {
             transform: translateY(-2px);
             background-color: #ffd54f;
         }
+
         .back-link {
             display: block;
-            margin-top: 30px;
-            color: #666;
+            margin-top: 20px;
+            color: var(--primary-color);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-weight: bold;
         }
+
         .back-link:hover {
             text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #aeaeae;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 100px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #aeaeae;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-links a.donation-link {
+            color: #ffca28;
+            font-weight: bold;
+            border: 1px solid #ffca28;
+            padding: 5px 12px;
+            border-radius: 15px;
+        }
+
+        .footer-links a.donation-link:hover {
+            background-color: #ffca28;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                margin: 30px 15px;
+                padding: 30px 20px;
+            }
+            h1 { font-size: 1.8rem; }
+            p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Soutenir le développement de BibliBooks</h1>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://play-lh.googleusercontent.com/R33VlFnmbQmpj1_tXm__kL4Abwq2xD1KtpFneX9yMb-Qb0FkINqzDO2UTha0RKm_2tKV5WR4xQ1SUbJtmXAVQ9o=w240-h480-rw" alt="BibliBooks Logo">
+                BibliBooks
+            </div>
+        </div>
+    </header>
+
+    <main class="content-section">
+        <h1>Soutenir le projet BibliBooks</h1>
         <p>
-            BibliBooks est un projet indépendant et gratuit. Si vous appréciez l'application et souhaitez m'aider à couvrir les frais d'hébergement et à ajouter de nouvelles fonctionnalités, vous pouvez faire un don sur ma page de soutien externe.
+            BibliBooks est une application indépendante et gratuite. Si vous appréciez l'application et souhaitez m'aider à couvrir les frais d'infrastructure et à ajouter de futures fonctionnalités, vous pouvez faire un don sur ma plateforme de soutien.
         </p>
+        
         <a href="https://votre-plateforme-de-don-externe.com" class="btn-external-donation" target="_blank" rel="noopener">
             ☕ Faire un don via une plateforme externe
         </a>
 
-        <a href="biblibooks_index.html" class="back-link">Retour au site principal</a>
-    </div>
+        <a href="biblibooks_index.html" class="back-link">← Retour à l'accueil</a>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="biblibooks_index.html">Accueil</a>
+                <a href="biblibooks_confidentialite.html">Politique de confidentialité</a>
+                <a href="biblibooks_soutenir.html" class="donation-link">Soutenir l'application</a>
+            </div>
+            <p>&copy; 2026 SbSoftwareDev. Tous droits réservés.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
