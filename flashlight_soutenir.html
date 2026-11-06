@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soutenir Lampe de poche</title>
+  <style>
+    /* [Styles identiques aux structures précédentes] */
+    :root { --primary-color: #F9AA33; --text-color: #333333; --bg-color: #f8f9fa; }
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); text-align: center; }
+    header { background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 10px 20px; position: sticky; top: 0; }
+    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: bold; color: var(--primary-color); }
+    .logo img { width: 45px; height: 45px; border-radius: 10px; }
+    .content-section { max-width: 650px; margin: 60px auto; padding: 40px; background-color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    h1 { font-size: 2.2rem; color: #111; margin-bottom: 20px; }
+    p { font-size: 1.1rem; color: #555; margin-bottom: 35px; }
+    .btn-external-donation { display: inline-block; background-color: #ffca28; color: #1a1a1a; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; }
+    .btn-external-donation:hover { transform: translateY(-2px); background-color: #ffd54f; }
+    .back-link { display: block; margin-top: 20px; color: var(--primary-color); text-decoration: none; font-weight: bold; }
+    footer { background-color: #1a1a1a; color: #aeaeae; padding: 40px 20px; margin-top: 100px; font-size: 0.95rem; }
+    .footer-links a { color: #aeaeae; text-decoration: none; margin: 0 15px; }
+    .footer-links a.donation-link { color: #ffca28; font-weight: bold; border: 1px solid #ffca28; padding: 5px 12px; border-radius: 15px; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="https://googleusercontent.com" alt="Lampe de poche Logo">
+      Lampe de poche
+    </div>
+  </div>
+</header>
+<main class="content-section">
+  <h1>Soutenir le projet Lampe de poche</h1>
+  <p>Lampe de poche est une application pratique et gratuite, sans publicité intrusive. Si elle vous dépanne au quotidien et que vous désirez m'encourager dans le développement d'outils simples et légers, vous pouvez faire un don de soutien.</p>
+  <a href="https://paypal.me" class="btn-external-donation" target="_blank" rel="noopener">☕ Faire un don via une plateforme externe</a>
+  <a href="flashlight_index.html" class="back-link">← Retour à l'accueil</a>
+</main>
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="flashlight_index.html">Accueil</a>
+      <a href="flashlight_confidentialite.html">Politique de confidentialité</a>
+      <a href="flashlight_soutenir.html" class="donation-link">Soutenir l'application</a>
+    </div>
+    <p>&copy; 2026 SbSoftwareDev. Tous droits réservés.</p>
+  </div>
+</footer>
+</body>
+</html>
