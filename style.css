@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Variables globales et Réinitialisation
+   ========================================================================== */
+:root {
+    --primary-color: #F9AA33;
+    --secondary-color: #344955;
+    --text-color: #333333;
+    --bg-color: #f8f9fa;
+}
+
+* {
+    box-sizing: border-box; /* Crucial pour le responsive : évite les débordements horizontaux */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%; /* Empêche certains navigateurs mobiles de zoomer le texte de façon imprévisible */
+}
+
+/* ==========================================================================
+   Structure & Navigation
+   ========================================================================== */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   Contenu Principal
+   ========================================================================== */
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 15px;
+    word-wrap: break-word; /* Évite qu'un long titre ne casse le layout sur petit écran */
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Pied de page (Footer)
+   ========================================================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #aeaeae;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex; /* Flexbox pour mieux gérer l'alignement sur mobile */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+}
+
+.footer-links a {
+    color: #aeaeae;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-links a.donation-link {
+    color: #ffca28;
+    font-weight: bold;
+    border: 1px solid #ffca28;
+    padding: 5px 12px;
+    border-radius: 15px;
+}
+
+.footer-links a.donation-link:hover {
+    background-color: #ffca28;
+    color: #1a1a1a;
+}
+
+/* ==========================================================================
+   Intégration et nettoyage Google Translate
+   ========================================================================== */
+/* Cache la grosse bannière intrusive du haut */
+.skiptranslate, google-src-sta, .VIpgJd-yAW33c-JJ33Ce {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Style optionnel pour l'infobulle ou les textes traduits par Google si l'utilisateur clique dessus */
+.VIpgJd-yAW33c-tt-org {
+    font-family: inherit !important;
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+}
+
+/* ==========================================================================
+   Optimisations Spécifiques Mobiles (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Taille optimale de lecture sur smartphone */
+    }
+
+    .content-section {
+        margin: 15px 10px; /* Moins d'espace perdu à l'extérieur */
+        padding: 24px 16px; /* Espacement intérieur condensé pour laisser la place au texte */
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        margin-top: 25px;
+    }
+
+    .footer-links {
+        flex-direction: column; /* Aligne les liens verticalement sur mobile pour une cible de clic plus facile */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        display: block;
+        padding: 8px 0; /* Agrandit la zone cliquable au doigt */
+    }
+}
