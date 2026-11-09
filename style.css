@@ -9,29 +9,33 @@
 }
 
 * {
-    box-sizing: border-box; /* Crucial pour le responsive : évite les débordements horizontaux */
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    background-color: var(--bg-color);
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
     color: var(--text-color);
-    background-color: var(--bg-color);
     line-height: 1.6;
-    -webkit-text-size-adjust: 100%; /* Empêche certains navigateurs mobiles de zoomer le texte de façon imprévisible */
+    -webkit-text-size-adjust: 100%;
 }
 
 /* ==========================================================================
-   Structure & Navigation
+   Header & Navigation
    ========================================================================== */
 header {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    width: 100%;
 }
 
 .nav-container {
@@ -58,7 +62,7 @@ header {
 }
 
 /* ==========================================================================
-   Contenu Principal
+   Mise en page des sections de contenu (Pages textuelles comme Confidentialité / Don)
    ========================================================================== */
 .content-section {
     max-width: 800px;
@@ -69,55 +73,162 @@ header {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-h1 {
+.content-section h1 {
     font-size: 2.4rem;
     color: #111;
     margin-top: 0;
     margin-bottom: 30px;
     border-bottom: 2px solid var(--bg-color);
     padding-bottom: 15px;
-    word-wrap: break-word; /* Évite qu'un long titre ne casse le layout sur petit écran */
+    word-wrap: break-word;
 }
 
-h2 {
+.content-section h2 {
     font-size: 1.5rem;
     color: var(--primary-color);
     margin-top: 35px;
     margin-bottom: 15px;
 }
 
-p {
+.content-section p {
     font-size: 1.05rem;
     color: #555;
     margin-bottom: 20px;
 }
 
-ul {
-    padding-left: 20px;
+.content-section ul {
+    padding-left: 24px;
     margin-bottom: 25px;
 }
 
-li {
+.content-section li {
     margin-bottom: 10px;
     color: #555;
     font-size: 1.05rem;
 }
 
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 .back-link {
-    display: inline-block;
+    display: block;
     margin-top: 30px;
     font-weight: bold;
     color: var(--primary-color);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Section Hero (Page d'accueil - Centrage renforcé anti-bug Google)
+   ========================================================================== */
+.hero {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: #111;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 650px;
+}
+
+/* ==========================================================================
+   Boutons d'action
+   ========================================================================== */
+.btn-download {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-download:hover {
+    background-color: #e0962b;
+}
+
+.btn-external-donation {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.btn-external-donation:hover {
+    background-color: #24343d;
+}
+
+/* ==========================================================================
+   Section Caractéristiques (Page d'accueil - Anti-décalage Google)
+   ========================================================================== */
+.features {
+    background-color: white;
+    padding: 60px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.features-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 30px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #666;
 }
 
 /* ==========================================================================
@@ -129,7 +240,7 @@ footer {
     padding: 40px 20px;
     text-align: center;
     font-size: 0.95rem;
-    margin-top: 60px;
+    width: 100%;
 }
 
 .footer-container {
@@ -139,7 +250,7 @@ footer {
 
 .footer-links {
     margin-bottom: 20px;
-    display: flex; /* Flexbox pour mieux gérer l'alignement sur mobile */
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px 30px;
@@ -169,59 +280,71 @@ footer {
 }
 
 /* ==========================================================================
-   Intégration et nettoyage Google Translate
+   Masquage et nettoyage strict de l'interface Google Translate
    ========================================================================== */
-/* Cache la grosse bannière intrusive du haut */
 .skiptranslate, google-src-sta, .VIpgJd-yAW33c-JJ33Ce {
     display: none !important;
 }
 
-body {
-    top: 0 !important;
-}
-
-/* Style optionnel pour l'infobulle ou les textes traduits par Google si l'utilisateur clique dessus */
-.VIpgJd-yAW33c-tt-org {
-    font-family: inherit !important;
-    background: #fff !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
-    border: none !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
+html {
+    padding-top: 0 !important;
 }
 
 /* ==========================================================================
-   Optimisations Spécifiques Mobiles (Media Queries)
+   Règles Responsive Mobiles (Cible principale)
    ========================================================================== */
 @media (max-width: 768px) {
     body {
-        font-size: 16px; /* Taille optimale de lecture sur smartphone */
+        font-size: 16px;
     }
 
+    /* Ajustement des blocs de texte simples */
     .content-section {
-        margin: 15px 10px; /* Moins d'espace perdu à l'extérieur */
-        padding: 24px 16px; /* Espacement intérieur condensé pour laisser la place au texte */
+        margin: 20px 12px;
+        padding: 25px 20px;
         border-radius: 8px;
     }
 
-    h1 {
-        font-size: 1.75rem;
-        margin-bottom: 20px;
+    .content-section ul {
+        padding-left: 20px;
     }
 
-    h2 {
-        font-size: 1.3rem;
-        margin-top: 25px;
+    /* Section Hero mobile */
+    .hero {
+        margin: 40px auto;
     }
 
-    .footer-links {
-        flex-direction: column; /* Aligne les liens verticalement sur mobile pour une cible de clic plus facile */
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Empilement vertical parfait des cartes de caractéristiques */
+    .features-container {
+        flex-direction: column;
         align-items: center;
+        gap: 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    /* Bouton de don pleine largeur sur mobile */
+    .btn-external-donation {
+        display: block;
+        width: 100%;
+        padding: 14px 15px;
+    }
+
+    /* Footer mobile */
+    .footer-links {
+        flex-direction: column;
         gap: 15px;
     }
 
     .footer-links a {
         display: block;
-        padding: 8px 0; /* Agrandit la zone cliquable au doigt */
+        padding: 8px 0;
     }
 }
