@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Variables globales et Réinitialisation
+   ========================================================================== */
+:root {
+    --primary-color: #722F37;   /* Bordeaux profond */
+    --secondary-color: #4A1C24; /* Lie-de-vin sombre */
+    --text-color: #333333;
+    --bg-color: #f9f7f7;        /* Blanc légèrement chaud */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    background-color: var(--bg-color);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   Mise en page des sections de contenu (Pages textuelles comme Confidentialité / Don)
+   ========================================================================== */
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.content-section h1 {
+    font-size: 2.4rem;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 15px;
+    word-wrap: break-word;
+}
+
+.content-section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.content-section p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.content-section ul {
+    padding-left: 24px;
+    margin-bottom: 25px;
+}
+
+.content-section li {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.back-link {
+    display: block;
+    margin-top: 30px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Section Hero (Page d'accueil - Centrage renforcé anti-bug Google)
+   ========================================================================== */
+.hero {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: #111;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 650px;
+}
+
+/* ==========================================================================
+   Boutons d'action
+   ========================================================================== */
+.btn-download {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-download:hover {
+    background-color: #59232a;
+}
+
+.btn-external-donation {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    text-align: center;
+}
+
+.btn-external-donation:hover {
+    background-color: #361319;
+}
+
+/* ==========================================================================
+   Section Caractéristiques (Page d'accueil - Anti-décalage Google)
+   ========================================================================== */
+.features {
+    background-color: white;
+    padding: 60px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.features-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 30px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.feature-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* ==========================================================================
+   Pied de page (Footer)
+   ========================================================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #aeaeae;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+}
+
+.footer-links a {
+    color: #aeaeae;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-links a.donation-link {
+    color: #e5b869;
+    font-weight: bold;
+    border: 1px solid #e5b869;
+    padding: 5px 12px;
+    border-radius: 15px;
+}
+
+.footer-links a.donation-link:hover {
+    background-color: #e5b869;
+    color: #1a1a1a;
+}
+
+/* ==========================================================================
+   Masquage et nettoyage strict de l'interface Google Translate
+   ========================================================================== */
+.skiptranslate, google-src-sta, .VIpgJd-yAW33c-JJ33Ce {
+    display: none !important;
+}
+
+html {
+    padding-top: 0 !important;
+}
+
+/* ==========================================================================
+   Règles Responsive Mobiles (Cible principale)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    /* Ajustement des blocs de texte simples */
+    .content-section {
+        margin: 20px 12px;
+        padding: 25px 20px;
+        border-radius: 8px;
+    }
+
+    .content-section ul {
+        padding-left: 20px;
+    }
+
+    /* Section Hero mobile */
+    .hero {
+        margin: 40px auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Empilement vertical parfait des cartes de caractéristiques */
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    /* Bouton de don pleine largeur sur mobile */
+    .btn-external-donation {
+        display: block;
+        width: 100%;
+        padding: 14px 15px;
+    }
+
+    /* Footer mobile */
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links a {
+        display: block;
+        padding: 8px 0;
+    }
+}
